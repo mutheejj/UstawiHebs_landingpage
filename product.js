@@ -11,7 +11,6 @@ productDetails.innerHTML = `
         <p><strong>${product.price}</strong></p>
         <div class="actions">
             <button id="buyButton">Buy Now</button>
-            <button id="addToCartButton">Add to Cart</button>
         </div>
     </div>
 `;
