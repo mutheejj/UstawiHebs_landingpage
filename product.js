@@ -16,36 +16,8 @@ productDetails.innerHTML = `
 `;
 
 const buyButton = document.getElementById('buyButton');
-const addToCartButton = document.getElementById('addToCartButton');
 
 buyButton.addEventListener('click', () => {
-    // Send notification to admin email
-    sendNotification(product.name);
-    alert(`You have purchased ${product.name}!`);
+    // Redirect to order page with product ID
+    window.location.href = `order.html?id=${productId}&name=${product.name}&price=${product.price}`;
 });
-
-addToCartButton.addEventListener('click', () => {
-    // Add product to cart
-    console.log(`Added ${product.name} to cart`);
-    alert(`Added ${product.name} to cart`);
-    // Update cart count in navigation bar
-    //...
-});
-
-async function sendNotification(productName) {
-    const TOKEN = "<YOUR-TOKEN-HERE>";
-    const SENDER_EMAIL = "<SENDER ADDRESS@YOURDOMAIN.COM>";
-    const RECIPIENT_EMAIL = "<RECIPIENT@EMAIL.COM>";
-
-    const client = new MailtrapClient({ token: TOKEN });
-
-    client
-        .send({
-            from: { name: "Ustawi Herbs", email: SENDER_EMAIL },
-            to: [{ email: RECIPIENT_EMAIL }],
-            subject: `New Order: ${productName}`,
-            text: `A new order has been placed for ${productName}.`,
-        })
-        .then(console.log)
-        .catch(console.error);
-}
