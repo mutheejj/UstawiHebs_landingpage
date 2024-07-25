@@ -28,7 +28,7 @@ placeOrderButton.addEventListener('click', (e) => {
 });
 
 async function sendNotification(productName, buyerName, buyerEmail, buyerPhone, quantity, totalPrice) {
-    const API_KEY = "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";
+    const API_KEY = "";
     const SENDER_EMAIL = "johnmuthee547@gmail.com";
     const RECIPIENT_EMAIL = "johnmuthee547@gmail.com";
 
