@@ -1,2 +1,0 @@
-# UstawiHebs_landingpage
-**welcom**
